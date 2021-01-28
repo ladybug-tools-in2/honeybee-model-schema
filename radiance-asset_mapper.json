@@ -1,0 +1,18 @@
+{
+  "classes": {
+    "CIE": "honeybee_schema.radiance.lightsource",
+    "CertainIrradiance": "honeybee_schema.radiance.lightsource",
+    "ClimateBased": "honeybee_schema.radiance.lightsource",
+    "Ground": "honeybee_schema.radiance.lightsource",
+    "Location": "honeybee_schema.radiance.wea",
+    "SkyDome": "honeybee_schema.radiance.lightsource",
+    "SkyHemisphere": "honeybee_schema.radiance.lightsource",
+    "SkyMatrix": "honeybee_schema.radiance.lightsource",
+    "SunMatrix": "honeybee_schema.radiance.lightsource",
+    "Wea": "honeybee_schema.radiance.wea",
+    "_GlowHemisphere": "honeybee_schema.radiance.lightsource",
+    "_PointInTime": "honeybee_schema.radiance.lightsource",
+    "_SkyWithSun": "honeybee_schema.radiance.lightsource"
+  },
+  "enums": {}
+}

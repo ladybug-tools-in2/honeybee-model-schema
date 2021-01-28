@@ -1,0 +1,651 @@
+{
+  "openapi": "3.0.2",
+  "servers": [],
+  "info": {
+    "description": "Honeybee radiance-asset schema.",
+    "version": "1.42.0",
+    "title": "Honeybee Radiance Asset Schema",
+    "contact": {
+      "name": "Ladybug Tools",
+      "email": "info@ladybug.tools",
+      "url": "https://github.com/ladybug-tools/honeybee-schema"
+    },
+    "x-logo": {
+      "url": "https://www.ladybug.tools/assets/img/honeybee-large.png",
+      "altText": "Honeybee logo"
+    },
+    "license": {
+      "name": "BSD",
+      "url": "https://github.com/ladybug-tools-in2/honeybee-schema/blob/master/LICENSE"
+    }
+  },
+  "externalDocs": {
+    "description": "OpenAPI Specification with Inheritance",
+    "url": "./radiance-asset_inheritance.json"
+  },
+  "tags": [
+    {
+      "name": "cie_model",
+      "x-displayName": "CIE",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/CIE\" />\n"
+    },
+    {
+      "name": "certainirradiance_model",
+      "x-displayName": "CertainIrradiance",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/CertainIrradiance\" />\n"
+    },
+    {
+      "name": "climatebased_model",
+      "x-displayName": "ClimateBased",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/ClimateBased\" />\n"
+    },
+    {
+      "name": "ground_model",
+      "x-displayName": "Ground",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Ground\" />\n"
+    },
+    {
+      "name": "location_model",
+      "x-displayName": "Location",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Location\" />\n"
+    },
+    {
+      "name": "skyhemisphere_model",
+      "x-displayName": "SkyHemisphere",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/SkyHemisphere\" />\n"
+    },
+    {
+      "name": "skymatrix_model",
+      "x-displayName": "SkyMatrix",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/SkyMatrix\" />\n"
+    },
+    {
+      "name": "sunmatrix_model",
+      "x-displayName": "SunMatrix",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/SunMatrix\" />\n"
+    },
+    {
+      "name": "wea_model",
+      "x-displayName": "Wea",
+      "description": "<SchemaDefinition schemaRef=\"#/components/schemas/Wea\" />\n"
+    }
+  ],
+  "x-tagGroups": [
+    {
+      "name": "Models",
+      "tags": [
+        "certainirradiance_model",
+        "cie_model",
+        "climatebased_model",
+        "ground_model",
+        "location_model",
+        "skyhemisphere_model",
+        "skymatrix_model",
+        "sunmatrix_model",
+        "wea_model"
+      ]
+    }
+  ],
+  "paths": {},
+  "components": {
+    "schemas": {
+      "Ground": {
+        "title": "Ground",
+        "description": "Ground component of the sky sphere.",
+        "type": "object",
+        "properties": {
+          "r_emittance": {
+            "title": "R Emittance",
+            "description": "A value between 0 and 1 for the red channel emittance.",
+            "default": 1.0,
+            "minimum": 0,
+            "maximum": 1,
+            "type": "number",
+            "format": "double"
+          },
+          "g_emittance": {
+            "title": "G Emittance",
+            "description": "A value between 0 and 1 for the green channel emittance.",
+            "default": 1.0,
+            "minimum": 0,
+            "maximum": 1,
+            "type": "number",
+            "format": "double"
+          },
+          "b_emittance": {
+            "title": "B Emittance",
+            "description": "A value between 0 and 1 for the blue channel of the emittance.",
+            "default": 1.0,
+            "minimum": 0,
+            "maximum": 1,
+            "type": "number",
+            "format": "double"
+          },
+          "type": {
+            "title": "Type",
+            "default": "Ground",
+            "pattern": "^Ground$",
+            "type": "string",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SkyHemisphere": {
+        "title": "SkyHemisphere",
+        "description": "SkyHemisphere component of the sky sphere.",
+        "type": "object",
+        "properties": {
+          "r_emittance": {
+            "title": "R Emittance",
+            "description": "A value between 0 and 1 for the red channel emittance.",
+            "default": 1.0,
+            "minimum": 0,
+            "maximum": 1,
+            "type": "number",
+            "format": "double"
+          },
+          "g_emittance": {
+            "title": "G Emittance",
+            "description": "A value between 0 and 1 for the green channel emittance.",
+            "default": 1.0,
+            "minimum": 0,
+            "maximum": 1,
+            "type": "number",
+            "format": "double"
+          },
+          "b_emittance": {
+            "title": "B Emittance",
+            "description": "A value between 0 and 1 for the blue channel of the emittance.",
+            "default": 1.0,
+            "minimum": 0,
+            "maximum": 1,
+            "type": "number",
+            "format": "double"
+          },
+          "type": {
+            "title": "Type",
+            "default": "SkyHemisphere",
+            "pattern": "^SkyHemisphere$",
+            "type": "string",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CertainIrradiance": {
+        "title": "CertainIrradiance",
+        "description": "Sky with evenly distributed light at a certain irradiance value.",
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "default": "CertainIrradiance",
+            "pattern": "^CertainIrradiance$",
+            "type": "string",
+            "readOnly": true
+          },
+          "ground_hemisphere": {
+            "title": "Ground Hemisphere",
+            "description": "Optional ground glow source.",
+            "default": {
+              "r_emittance": 1.0,
+              "g_emittance": 1.0,
+              "b_emittance": 1.0,
+              "type": "Ground"
+            },
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Ground"
+              }
+            ]
+          },
+          "sky_hemisphere": {
+            "title": "Sky Hemisphere",
+            "description": "Optional sky hemisphere glow source.",
+            "default": {
+              "r_emittance": 1.0,
+              "g_emittance": 1.0,
+              "b_emittance": 1.0,
+              "type": "SkyHemisphere"
+            },
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SkyHemisphere"
+              }
+            ]
+          },
+          "ground_reflectance": {
+            "title": "Ground Reflectance",
+            "description": "A value between 0 and 1 for the ground reflectance.",
+            "default": 0.2,
+            "minimum": 0,
+            "maximum": 1,
+            "type": "number",
+            "format": "double"
+          },
+          "irradiance": {
+            "title": "Irradiance",
+            "description": "A value for the horizontal diffuse irradiance value in W/m2.",
+            "default": 558.659,
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CIE": {
+        "title": "CIE",
+        "description": "CIE sky similar to using Radiance's gensky command.",
+        "type": "object",
+        "properties": {
+          "altitude": {
+            "title": "Altitude",
+            "description": "The solar altitude measured in degrees above the horizon.Negative values indicate cases where the sun is below the horizon (eg. twilight conditions).",
+            "minimum": -90,
+            "maximum": 90,
+            "type": "number",
+            "format": "double"
+          },
+          "azimuth": {
+            "title": "Azimuth",
+            "description": "The solar altitude measured in degrees above the horizon.The azimuth is measured in degrees east of North. East is 90, South is 180 and West is 270. Note that this input is different from Radiance convention. In Radiance the azimuth degrees are measured in west of South.",
+            "minimum": 0,
+            "maximum": 360,
+            "type": "number",
+            "format": "double"
+          },
+          "type": {
+            "title": "Type",
+            "default": "CIE",
+            "pattern": "^CIE$",
+            "type": "string",
+            "readOnly": true
+          },
+          "ground_hemisphere": {
+            "title": "Ground Hemisphere",
+            "description": "Optional ground glow source.",
+            "default": {
+              "r_emittance": 1.0,
+              "g_emittance": 1.0,
+              "b_emittance": 1.0,
+              "type": "Ground"
+            },
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Ground"
+              }
+            ]
+          },
+          "sky_hemisphere": {
+            "title": "Sky Hemisphere",
+            "description": "Optional sky hemisphere glow source.",
+            "default": {
+              "r_emittance": 1.0,
+              "g_emittance": 1.0,
+              "b_emittance": 1.0,
+              "type": "SkyHemisphere"
+            },
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SkyHemisphere"
+              }
+            ]
+          },
+          "ground_reflectance": {
+            "title": "Ground Reflectance",
+            "description": "A value between 0 and 1 for the ground reflectance.",
+            "default": 0.2,
+            "minimum": 0,
+            "maximum": 1,
+            "type": "number",
+            "format": "double"
+          },
+          "sky_type": {
+            "title": "Sky Type",
+            "description": "An integer between 0..5 to indicate CIE Sky Type.\n0 = Sunny with sun.\n1 = Sunny without sun.\n2 = Intermediate with sun.\n3 = Intermediate without sun.\n4 = Cloudy sky.\n5 = Uniform cloudy sky.",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 5,
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "required": [
+          "altitude",
+          "azimuth"
+        ],
+        "additionalProperties": false
+      },
+      "ClimateBased": {
+        "title": "ClimateBased",
+        "description": "Point-in-time Climate-based sky.",
+        "type": "object",
+        "properties": {
+          "altitude": {
+            "title": "Altitude",
+            "description": "The solar altitude measured in degrees above the horizon.Negative values indicate cases where the sun is below the horizon (eg. twilight conditions).",
+            "minimum": -90,
+            "maximum": 90,
+            "type": "number",
+            "format": "double"
+          },
+          "azimuth": {
+            "title": "Azimuth",
+            "description": "The solar altitude measured in degrees above the horizon.The azimuth is measured in degrees east of North. East is 90, South is 180 and West is 270. Note that this input is different from Radiance convention. In Radiance the azimuth degrees are measured in west of South.",
+            "minimum": 0,
+            "maximum": 360,
+            "type": "number",
+            "format": "double"
+          },
+          "direct_normal_irradiance": {
+            "title": "Direct Normal Irradiance",
+            "description": "Direct normal irradiance (W/m2).",
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "diffuse_horizontal_irradiance": {
+            "title": "Diffuse Horizontal Irradiance",
+            "description": "Diffuse horizontal irradiance (W/m2).",
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "type": {
+            "title": "Type",
+            "default": "ClimateBased",
+            "pattern": "^ClimateBased$",
+            "type": "string",
+            "readOnly": true
+          },
+          "ground_hemisphere": {
+            "title": "Ground Hemisphere",
+            "description": "Optional ground glow source.",
+            "default": {
+              "r_emittance": 1.0,
+              "g_emittance": 1.0,
+              "b_emittance": 1.0,
+              "type": "Ground"
+            },
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Ground"
+              }
+            ]
+          },
+          "sky_hemisphere": {
+            "title": "Sky Hemisphere",
+            "description": "Optional sky hemisphere glow source.",
+            "default": {
+              "r_emittance": 1.0,
+              "g_emittance": 1.0,
+              "b_emittance": 1.0,
+              "type": "SkyHemisphere"
+            },
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SkyHemisphere"
+              }
+            ]
+          },
+          "ground_reflectance": {
+            "title": "Ground Reflectance",
+            "description": "A value between 0 and 1 for the ground reflectance.",
+            "default": 0.2,
+            "minimum": 0,
+            "maximum": 1,
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "required": [
+          "altitude",
+          "azimuth",
+          "direct_normal_irradiance",
+          "diffuse_horizontal_irradiance"
+        ],
+        "additionalProperties": false
+      },
+      "Location": {
+        "title": "Location",
+        "description": "Used to specify latitude and longitude of a location on the Earth.",
+        "type": "object",
+        "properties": {
+          "latitude": {
+            "title": "Latitude",
+            "description": "Location latitude between -90 and 90.",
+            "minimum": -90,
+            "maximum": 90,
+            "type": "number",
+            "format": "double"
+          },
+          "longitude": {
+            "title": "Longitude",
+            "description": "Location longitude between -180 (west) and 180 (east).",
+            "minimum": -180,
+            "maximum": 180,
+            "type": "number",
+            "format": "double"
+          },
+          "type": {
+            "title": "Type",
+            "default": "Location",
+            "pattern": "^Location$",
+            "type": "string",
+            "readOnly": true
+          },
+          "time_zone": {
+            "title": "Time Zone",
+            "description": "Time zone between -12 hours (west) and +14 hours (east). If None, the time zone will be an estimated integer value derived from the longitude in accordance with solar time.",
+            "minimum": -12,
+            "maximum": 14,
+            "type": "number",
+            "format": "double"
+          },
+          "elevation": {
+            "title": "Elevation",
+            "description": "A number for elevation of the location in meters.",
+            "default": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "city": {
+            "title": "City",
+            "description": "Name of the city as a string.",
+            "default": "-",
+            "type": "string"
+          },
+          "state": {
+            "title": "State",
+            "description": "Optional state in which the city is located.",
+            "default": "-",
+            "type": "string"
+          },
+          "country": {
+            "title": "Country",
+            "description": "Name of the country as a string.",
+            "default": "-",
+            "type": "string"
+          },
+          "station_id": {
+            "title": "Station Id",
+            "description": "Optional ID of the location if the location is representing a weather station.",
+            "type": "string"
+          },
+          "source": {
+            "title": "Source",
+            "description": "Optional source of data (e.g. TMY, TMY3).",
+            "type": "string"
+          }
+        },
+        "required": [
+          "latitude",
+          "longitude"
+        ],
+        "additionalProperties": false
+      },
+      "Wea": {
+        "title": "Wea",
+        "description": "Used to represent the contents of a Wea file.",
+        "type": "object",
+        "properties": {
+          "location": {
+            "title": "Location",
+            "description": "Location object to note latitude, longitude and time zone.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Location"
+              }
+            ]
+          },
+          "direct_normal_irradiance": {
+            "title": "Direct Normal Irradiance",
+            "description": "A list of numbers for the annual direct normal irradiance in W/m2. The length of this list must match the diffuse_horizontal_irradiance.",
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "number",
+              "minimum": 0,
+              "format": "double"
+            }
+          },
+          "diffuse_horizontal_irradiance": {
+            "title": "Diffuse Horizontal Irradiance",
+            "description": "A list of numbers for the annual diffuse horizontal irradiance in W/m2. The length of this list must match the direct_normal_irradiance.",
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "number",
+              "minimum": 0,
+              "format": "double"
+            }
+          },
+          "type": {
+            "title": "Type",
+            "default": "Wea",
+            "pattern": "^Wea$",
+            "type": "string",
+            "readOnly": true
+          },
+          "timestep": {
+            "title": "Timestep",
+            "description": "An integer to set the number of time steps per hour.",
+            "default": 1,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "is_leap_year": {
+            "title": "Is Leap Year",
+            "description": "A boolean to indicate if values are representing a leap year.",
+            "default": false,
+            "type": "boolean"
+          },
+          "datetimes": {
+            "title": "Datetimes",
+            "description": "A list with a length matching the length of the irradiance lists. Each item in the list should also be a list with 4 integers that together represent a DateTime in the format [month, day, hour, minute]. DateTimes are not required when the input irradiance data is annual but are required in all other cases.",
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "minItems": 4,
+              "maxItems": 5
+            }
+          }
+        },
+        "required": [
+          "location",
+          "direct_normal_irradiance",
+          "diffuse_horizontal_irradiance"
+        ],
+        "additionalProperties": false
+      },
+      "SunMatrix": {
+        "title": "SunMatrix",
+        "description": "Annual Climate-based Sun matrix.",
+        "type": "object",
+        "properties": {
+          "wea": {
+            "title": "Wea",
+            "description": "A Ladybug wea schema.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Wea"
+              }
+            ]
+          },
+          "type": {
+            "title": "Type",
+            "default": "SunMatrix",
+            "pattern": "^SunMatrix$",
+            "type": "string",
+            "readOnly": true
+          },
+          "north": {
+            "title": "North",
+            "description": "A number between -360 and 360 for the counterclockwise difference between the North and the positive Y-axis in degrees. 90 is West and 270 is East.",
+            "default": 0,
+            "minimum": -360,
+            "maximum": 360,
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "required": [
+          "wea"
+        ],
+        "additionalProperties": false
+      },
+      "SkyMatrix": {
+        "title": "SkyMatrix",
+        "description": "Annual Climate-based Sky matrix.",
+        "type": "object",
+        "properties": {
+          "wea": {
+            "title": "Wea",
+            "description": "A Ladybug wea schema.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Wea"
+              }
+            ]
+          },
+          "type": {
+            "title": "Type",
+            "default": "SkyMatrix",
+            "pattern": "^SkyMatrix$",
+            "type": "string",
+            "readOnly": true
+          },
+          "north": {
+            "title": "North",
+            "description": "A number between -360 and 360 for the counterclockwise difference between the North and the positive Y-axis in degrees. 90 is West and 270 is East.",
+            "default": 0,
+            "minimum": -360,
+            "maximum": 360,
+            "type": "number",
+            "format": "double"
+          },
+          "density": {
+            "title": "Density",
+            "description": "Sky patch subdivision density. This values is similar to -m option in gendaymtx command. Default is 1 which means 145 sky patches and 1 patch for the ground. One can add to the resolution typically by factors of two (2, 4, 8, ...) which yields a higher resolution sky using the Reinhart patch subdivision.",
+            "default": 1,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "required": [
+          "wea"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}
